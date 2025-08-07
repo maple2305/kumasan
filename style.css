@@ -1,0 +1,164 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap'); /* Google Fontsから「Kaisei Decol」というフォントを読み込む設定 */
+/* CSS Document */
+
+/*------------------
+    レイアウト
+-------------------*/
+body{
+    font-family: "Kaisei Decol", serif;  /*ページ全体で「Kaisei Decol」フォントを使用。*/
+    color: rgb(66, 45, 45);
+    background: url(image/background.jpg)no-repeat center center fixed; /*画像を繰り返さず中央に固定表示 */
+    background-size: cover; /* 背景画像を画面いっぱいに伸ばす*/
+    
+}
+div#container{
+    width: 900px; /*ページ全体のコンテンツ幅を900pxに固定 */
+    margin: auto;  /* 左右のマージンを自動にして、画面の中央に配置 */
+    background: #fffccc; /* 背景色を設定（薄いクリーム色）。#RRGGBB形式の16進数カラーコード */
+    padding: 10px 5px; /* 内側の余白を設定。上下に10px、左右に5pxのスペースをつける */
+    overflow: hidden; /* 子要素が浮動化（float）したとき、親の高さが崩れないようにするためのクリア処理 */
+}
+/*------ナビ------*/
+header nav ul{
+    margin: 0; /* <ul> の外側の余白をゼロにする（ブラウザのデフォルト余白を消す） */
+    padding: 0; /* <ul> の内側の余白をゼロにする（これもデフォルトをリセット） */
+    display: flex; /* 子要素（<li>）を横並びに配置するためにFlexboxを使用 */
+    list-style: none; /* <ul> の先頭につく黒丸（リストマーカー）を消す */
+}
+header nav li{
+    margin-right: 15px;/* 各<li>（メニューアイテム）の右側に15pxの余白をつける */
+}
+header nav ul li a {
+    display: flex; /* <a>タグをFlexboxのコンテナにする。Flexboxにすると、文字（子要素）を自由に上下左右に寄せられる */
+    justify-content: flex-end; /* 右寄せに設定する */
+    align-items: flex-end; /* 下寄せに設定する */
+    width: 142px;/* リンク全体の横幅を固定。メニューを揃えるため */
+    height: 90px; /* リンク全体の高さを固定。縦の基準を作る */
+    padding: 5px; /* 内側の余白。文字が端にピッタリくっつかず、少し余裕を持たせる */
+    text-decoration: none; /* デフォルトのリンクの下線を消す */
+    font-weight: bold;/* 文字を太字にする */
+    color: #333;
+}
+header nav ul li a.active{
+    color:  #d4a017; /* 現在のページのリンク文字色を変える */
+    border-bottom: 3px solid #339966 ;/* 現在のページのリンクの下に太めの線をつけて、選択中であることを視覚的に強調 */
+}
+header nav ul li a:hover{
+    color: #339966; /* ホバー時に文字色を緑系(#339966)に変える */
+}
+header nav ul li a.nav01{
+    background: url(image/icon_about.jpg) no-repeat left top;
+}
+header nav ul li a.nav02{
+    background: url(image/icon_home.jpg) no-repeat left top;
+}
+header nav ul li a.nav03{
+    background: url(image/icon_menu.jpg) no-repeat left top;
+}
+header nav ul li a.nav04{
+    background: url(image/icon_access.jpg) no-repeat left top;
+}
+header nav ul li a.nav05{
+    background: url(image/icon_contact.jpg) no-repeat left top;
+}
+/*------------------
+    フッター
+-------------------*/
+footer{
+    height: 30px; /* フッター全体の高さを30pxに固定 */
+    background: #ffe294;/* 背景色 */
+    text-align: center; /* フッター内のテキストや要素を中央揃えにする */
+    clear: both;/* 上の要素でfloatが使われている場合に回り込みを解除して、フッターが正しく下に配置されるようにする */
+}
+/*------------------
+    メイン
+-------------------*/
+/*---お知らせ---*/
+article.newArea{
+    border: 1px solid #5c5c5c; /* 枠線を設定 */
+    margin: 10px 10px;/* 枠線の外側の余白（マージン）を設定 */
+}
+.newArea h2 {
+    float: left;       /* h2（画像）を左に寄せて、横並びにするためfloatを使用 */
+    width: 270px;      /* 画像の幅を270pxに固定して、横に入るスペースを確保 */
+    margin: 0;         /* h2（画像）の外側余白をリセットして詰める */
+}
+
+article.newArea ul {
+    list-style-type: none;  /* ul要素のデフォルトのリストマーカー（●など）を消す */
+}
+.newArea ul li::before {
+    content: "★"; /* ★をリストマーカーとして表示 */
+    color: red; /* 色を変更 */
+  }
+/*---メインコンテンツレイアウト---*/
+#main {
+    float: left;        /* #main（メインコンテンツ）を左に寄せて、隣にサイドバーなどを横並びで配置できるようにする */
+    width: 640px;       /* メインエリアの横幅を640pxに固定。全体レイアウトのバランスを取る */
+    margin-left: 5px;   /* 左側に5pxの余白を追加。デザイン上のゆとりを持たせる */
+}
+.infoArea {
+    float: left;/* 要素を左に寄せて横に並べる */
+    width: 400px;/* 横幅400ピクセルに固定 */
+    height: 300px; /* 高さ300ピクセルに固定 */
+    background: url(image/frame.jpg); /* 背景画像を設定 */
+    background-size: 10px 10px;  /* 背景画像のサイズを小さくする */
+    background-color: white;/* 画像の下に白背景 */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    background-size: cover;/* 背景画像を要素全体に拡大縮小 */
+    box-shadow: 5px 5px 5px #888; /* 右下にグレーの影をつける */
+    padding: 30px; /* 内側余白を30pxに */
+    margin: 10px 0 15px;/* 上10px、左右0px、下15pxの外側余白 */
+}
+.infoArea h2 {
+    margin: 10px;           /* h2（見出し）の外側に均等に10pxの余白をつけて、他の要素との間隔を確保 */
+    color: #444;            /* 文字色をやや薄めのダークグレーに設定（黒より柔らかい印象） */
+    font-size: 130%;        /* 通常のフォントサイズより少し大きめ（130%）にして、見出しとしての強調をつける */
+}
+
+.infoArea p {
+    text-align: left;       /* テキストを左揃えにする（ブラウザによっては初期設定で中央になるのを防ぐ） */
+    margin: 10px 15px;      /* 上下に10px、左右に15pxの余白を入れて、読みやすく整える */
+    color: #444;            /* こちらも柔らかめのダークグレーで視認性とデザイン性を両立 */
+    font-size: 90%;         /* 通常より少し小さいサイズ（90%）にして本文として控えめな印象に */
+    line-height: 150%;      /* 行間を1.5倍にして、行間の詰まりを防ぎ、可読性をアップ */
+}
+
+
+/*--サイドバー --*/
+/* サイドバーのナビゲーションリストの各リストアイテムのスタイル */
+aside nav ul li {
+    list-style-type: none; /* リストマーカー（●など）を消す */
+    display: block;         /* ブロック要素として表示（縦に並ぶ） */
+    padding: 10px 0;        /* 上下に余白を追加して押しやすくする */
+}
+
+/* サイドバーのナビゲーションリンク（ボタン風）のスタイル */
+aside nav ul li a {
+
+    display: flex;                 /* フレックスボックスを使って中身を整列 */
+    align-items: center;          /* 縦方向（上下）中央寄せ */
+    justify-content: center;      /* 横方向（左右）中央寄せ */
+    text-align: center;           /* テキストの中央揃え */
+
+    width: 200px;                 /* ボタンの横幅を指定（親要素に合わせて調整可） */
+    height: 100px;                /* ボタンの高さを指定 */
+    padding: 10px;                /* 内側の余白を追加して、押しやすさ・見た目を調整 */
+
+    color: #666;                  /* 文字色をグレーに設定 */
+    font-weight: bold;           /* 文字を太字にする */
+    font-size: 1rem;             /* 文字サイズを標準に設定 */
+    text-decoration: none;       /* リンクの下線を消す */
+
+    border-radius: 10px;         /* 角を丸くしてやわらかい印象にする */
+    border: 1px solid #c6c6c6;   /* 薄いグレーの境界線を表示 */
+
+    /* 背景に上から下へのグラデーションを適用 */
+    background: -webkit-linear-gradient(top, #fbe0fb, #f5c7b3); /* 古いブラウザ向け（Safariなど） */
+    background: linear-gradient(to bottom, #fbe0fb, #f5c7b3);   /* 標準的なグラデーション */
+
+    background-color: #fdddd5;   /* グラデーション非対応環境向けの背景色（保険） */
+
+    margin: 0;                   /* 外側の余白をリセット（重なりを防止） */
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>　<!-- HTML5を使う宣言 -->
+<html lang="ja">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap');
+    </style>
+  <meta charset="UTF-8">
+  <meta name="description" content="はちみつCAFE くまさんのひみつきち。木のぬくもりに包まれた森の隠れ家のようなカフェで、はちみつスイーツと癒やしの時間をどうぞ。">　<!-- 検索結果に出る説明文(SEO対策)-->
+  <title>index - トップページ</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+<div id ="container">
+    <!--ヘッダー-->
+    <header>
+        <h1>はちみつCAFE　くまさんのひみつきち</h1>　<!--サイトタイトル(SEOで重要)-->
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav01 active">Home</a></li><!--class="active" で現在ページを強調-->
+                <li><a href="about.html" class="nav02">About</a></li>
+                <li><a href="menu.html" class="nav03">Menu</a></li>
+                <li><a href="access.html" class="nav04">Access</a></li>
+                <li><a href="contact.html" class="nav05">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="image/index_kuma.jpg" alt="カフェの人気ドリンク" width="900" height="500"><!--alt属性は視覚障害者やSEO向けの説明-->
+    </header>
+<!--ヘッダー　END-->
+
+<!--お知らせ-->
+    <article class="newArea"><!-- 独立したコンテンツのかたまり -->
+        <h2><img src="image/osirase_kotori.jpg" alt="お知らせ" width="200" style="margin-top: 20px; margin-left: 20px;"></h2>
+        <ul><!-- <ul><li>：お知らせリスト、<u>：日付を下線付きで表示-->
+            <li><u>2025.xx.xx</u>　売り切れの続いていた「松井さんちの白菊はちみつ」入荷しました！　芳醇な香り漂う華やかな味わいがおすすめです。</li>
+            <li><u>2025.xx.xx</u>　アクセスページを更新しました。</li>
+        </ul>
+    </article>
+<!--お知らせ END-->
+
+<!--メインコンテンツ-->
+<div id="main">
+    <section class="infoArea">　<!--<section>：コンテンツのまとまり-->
+        <h2>季節限定スイーツ</h2>　<!--<h2>：見出し、<p>：説明文-->
+        <img src="image/ichigocake.jpg"><img src="image/chococake.jpg">
+        <p>かわいさ満点💛💛💛　しっとりふわふわのスポンジケーキと、新鮮なはちみつクリームをふんだんに使用したくまさん型のケーキが新登場🍰🍯✨
+       </p>
+    </section>
+    <section class="infoArea">
+        <h2>今月のイベント</h2>
+        <img src="image/dokushokuma.jpg">
+        <p>バレンタインキャンペーン実施中❤　X、インスタ、TikTokなどのSNS投稿画面を見せていただくとレジにて5%割引いたします！</p>
+ </section>
+</div>
+<!--メインコンテンツ　end-->
+
+ <!--サイドバー start-->
+ <!--<aside>：補足情報やメニュー用のエリア、<br>で1行改行して読みやすさを調整-->
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="attention.html">1歳未満の<br>乳幼児連れのお客様へ</a></li>
+                <li><a href="onlineShop.html">オンラインショップ</a></li>
+            </ul>
+        </nav>
+    </aside>
+<!--サイドバー end-->
+
+    <footer>　<!--<footer>：ページ下部-->
+        <small>Copyright (C) 2025 はちみつCAFE　くまさんのひみつきち. All Rights Reserved.</small><!--<small>：著作権表記を小さめ文字に-->
+    </footer>
+</div>
+</body>
+
